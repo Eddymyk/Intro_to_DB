@@ -4,11 +4,14 @@ import mysql.connector
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="12345"  
+    password="12345",  
     database="alx_book_store"  
 )
 
+
 cursor = mydb.cursor()
+
+cursor.execute("USE alx_book_store;")
 
 cursor.execute("SHOW TABLES")
 tables = cursor.fetchall()
